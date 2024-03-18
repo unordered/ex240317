@@ -133,10 +133,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChatServer.h" />
+    <ClInclude Include="ContentGlobalHeader.h" />
+    <ClInclude Include="CRevolver.h" />
     <ClInclude Include="GlobalHerder.h" />
     <ClInclude Include="IocpCore.h" />
     <ClInclude Include="Listener.h" />
     <ClInclude Include="LogClass.h" />
+    <ClInclude Include="PacketType.h" />
+    <ClInclude Include="Session.h" />
     <ClInclude Include="UtilHeader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

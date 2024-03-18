@@ -13,35 +13,50 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="IOCP CORE">
+      <UniqueIdentifier>{55a1df33-c19b-47ce-b0da-4832f58c2202}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="IocpCore.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="LogClass.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="IocpCore.cpp">
+      <Filter>IOCP CORE</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IocpCore.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="ChatServer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Listener.h">
+    <ClInclude Include="LogClass.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="IocpCore.h">
+      <Filter>IOCP CORE</Filter>
     </ClInclude>
     <ClInclude Include="GlobalHerder.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>IOCP CORE</Filter>
+    </ClInclude>
+    <ClInclude Include="Listener.h">
+      <Filter>IOCP CORE</Filter>
     </ClInclude>
     <ClInclude Include="UtilHeader.h">
+      <Filter>IOCP CORE</Filter>
+    </ClInclude>
+    <ClInclude Include="CRevolver.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="LogClass.h">
+    <ClInclude Include="Session.h">
+      <Filter>IOCP CORE</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketType.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentGlobalHeader.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
