@@ -24,11 +24,11 @@ class PacketProcess
 public:
 	void Init()
 	{
-		mMessageFunctions[(int)CS_LOGIN] = func1;
-		mMessageFunctions[(int)SC_LOGIN] = func1;
-		mMessageFunctions[(int)CS_LOGOUT] = func1;
-		mMessageFunctions[(int)SC_LOGOUT] = func1;
-		mMessageFunctions[(int)CS_ROOM_ENTHER_5] = func1;
+	/*	auto e = mMessageFunctions[(int)CS_LOGIN];
+		mMessageFunctions[(int)CS_LOGIN] = &func1;
+		mMessageFunctions[(int)SC_LOGIN] = &func2;
+		mMessageFunctions[(int)CS_LOGOUT] = &func3;
+		mMessageFunctions[(int)CS_ROOM_ENTHER_5] = &func4;*/
 
 	}
 
@@ -58,14 +58,16 @@ public:
 		// if(type ==true)
 
 	}
+
 	int func1(unsigned int, unsigned short, BYTE*);
 	int func2(unsigned int, unsigned short, BYTE*);
 	int func3(unsigned int, unsigned short, BYTE*);
 	int func4(unsigned int, unsigned short, BYTE*);
 	int func5(unsigned int, unsigned short, BYTE*);
 
-	//typedef int(PacketProcess::* PROCESS_RECV_PACKET_FUNCTION)(unsigned int, unsigned short, BYTE*);
-	unordered_map<int,int(PacketProcess::*)(unsigned int, unsigned short, BYTE*)> mMessageFunctions;
+	typedef int(PacketProcess::* PROCESS_RECV_PACKET_FUNCTION)(unsigned int, unsigned short, BYTE*);
+	unordered_map<int,PROCESS_RECV_PACKET_FUNCTION> mMessageFunctions;
+	//unordered_map<int,int(PacketProcess::*)(unsigned int, unsigned short, BYTE*)> mMessageFunctions;
 	//std::unordered_map<int, PROCESS_RECV_PACKET_FUNCTION> mMessageFunctions;
 };
 

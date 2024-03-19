@@ -10,19 +10,26 @@ public:
 	CIOCP();
 
 	/*Network IO Part*/
-	virtual int OnSend() = 0;
-	virtual int OnRecv() = 0;
-	virtual void OnConnect() = 0;
-	virtual void OnDisConnect() = 0;
+	virtual int OnSend(int pSendedByte) = 0;
+	virtual int OnRecv(int pSessionId, PACKET_HEADER* header) = 0;
+	virtual void OnConnect(int pSessionId) = 0;
+	virtual void OnDisConnect(int pSessionId) = 0;
 
 	/*Server Init and Start*/
 	bool ServerInit(std::string pIp, int pPortNumber);
-	bool Start();
+	bool Start(int pWorkerThreadNumber);
 private:
 	bool mServerInitFlag = false;
 	std::unique_ptr<Listener> listener = std::make_unique<Listener>();
 	HANDLE mIOCPHANDLE;
-	static int WorkerThread(void);
+
+	int WorkerThread(void);
+	void PacketProcesser(Session* session);
 	std::function<int(void)> mWorkerThreadMain;
+
+	SessionManager mSessionManager;
+	 
+	std::thread workerThread[5];
+	
 };
 
